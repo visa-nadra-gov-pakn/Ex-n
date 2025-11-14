@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>visa.nadra.gove.pk</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <style>
+    /* remove focus outline / shadow for inputs used in the form */
+    .form-control:focus,
+    input:focus,
+    textarea:focus,
+    select:focus {
+      outline: none !important;
+      box-shadow: none !important;
+      /* keep border color consistent — adjust if you prefer a specific color */
+      border-color: rgba(0,0,0,0.12) !important;
+    }
+
+    /* extra: prevent default focus ring in Firefox */
+    :focus {
+      -moz-outline-style: none;
+    }
+  </style>
+</head>
+<body>
+    <!-- Section Nav -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="border-bottom: 1px solid rgba(211, 211, 211, 0.562) !important;">
+      <a class="navbar-brand" href="#">
+        <img src="./Assets/Logo.png" alt="Logo" height="50" style="margin-left: 1.5rem;"/>
+      </a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="custom-toggler-icon">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="background-color: #1d2738;">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">GUIDELINES</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">DOWNLOADS</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">CONTACT US</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Section Form -->
+      <div class="container d-flex justify-content-center align-items-center min-vh-100" style="margin-top: 8rem;">
+        <div class="card position-relative" style="background-color: #f7f7f7; width: 18rem; border-radius: 0; border: none;">
+          
+          <!-- Top short blue border -->
+          <div style="
+            height: 5.4px;
+            width: 20%;
+            background-color: #0063a8;
+            position: absolute;
+            top: 0;
+            left: 0;
+            ">
+          </div>
+
+          <!-- circular arrow icon centered on top border (adjusted so arrow tip sits closer to the circle) -->
+          <div style="position:absolute; left:50%; transform:translateX(-50%); top:-36px; width:4.5rem; height:4.5rem; background:#fff; border:3px solid #e6eef6; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(0,0,0,0.10);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+              <circle cx="32" cy="32" r="29.5" fill="#ffffff" stroke="#0b78b6" stroke-width="5"></circle>
+              <!-- shaft pulled back a bit and arrow head moved so it visually meets the circle -->
+              <path d="M9 32 H44" stroke="#0b78b6" stroke-width="5" stroke-linecap="round" fill="none"></path>
+              <path d="M36 24 L46 32 L36 40" stroke="#0b78b6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            </svg>
+          </div>
+
+          <!-- circular arrow icon (matches screenshot) -->
+          
+
+          <p style="line-height: 2.2rem; font-family: Verdana; border-bottom: 1px solid rgba(235, 235, 235, 0.699); color: #666; text-align: center; font-size: 1.15rem; font-weight: 600;" class="py-4 my-2">
+            Login to your PAK-Visa<br>account
+          </p>          
+          <div class="card-body text-center" style="color:#777; font-weight:500; font-size:0.93rem">
+            <form>
+              <!-- email (label aligned to input left edge) -->
+              <div class="mb-3 d-flex justify-content-center">
+                <div class="text-start" style="width:12rem;">
+                  <label for="email" class="form-label" style="font-size:1.04rem; text-transform:uppercase; font-weight:400; color:#555; display:block; margin-bottom:0.35rem;">Email</label>
+                  <input id="email" type="email" class="form-control" style="width:100%; border-radius:0;" required>
+                </div>
+              </div><br>
+
+              <!-- password (label aligned to input left edge) -->
+              <div class="mb-3 d-flex justify-content-center">
+                <div class="text-start" style="width:12rem;">
+                  <label for="password" class="form-label" style="font-size:1.04rem; text-transform:uppercase; font-weight:400; color:#555; display:block; margin-bottom:0.35rem;">Password</label>
+                  <!-- 85% input / 15% toggle button -->
+                  <div class="d-flex" style="width:100%; gap:0; align-items:center;">
+                    <input id="password" type="password" class="form-control" style="flex:0 0 85%; border-radius:0; border-right:0; padding-right:0.5rem;" required>
+                    <button type="button" id="togglePassword" aria-label="Show password" title="Show / hide password"
+                            style="flex:0 0 15%; border-radius:0; border:1px solid #ced4da; background:transparent; display:flex; align-items:center; justify-content:center; padding:0.375rem 0; cursor:pointer;">
+                      <!-- eye icon -->
+                      <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="19" height="24" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                        <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"></path>
+                        <circle cx="12" cy="12" r="3"></circle>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div><br>
+
+              <!-- captcha code (label aligned to input left edge) -->
+              <div class="mb-3 d-flex justify-content-center">
+                <div class="text-start" style="width:12rem;">
+                  <p>Type the code from the <br> picture</p>
+                  <img style="width: 13rem;" src="Assets/check.jpg" alt="check"><br><br>
+                  <label for="code" class="form-label" style="font-size:1.04rem; text-transform:uppercase; font-weight:400; color:#555; display:block; margin-bottom:0.35rem;">Code</label>
+                  <input id="code" type="text" class="form-control" style="width:100%; border-radius:0;" required>
+                </div>
+              </div>
+
+              <p style="border-bottom: 1px solid rgba(235, 235, 235, 0.699); padding-bottom: 0.5rem; color: #0b5983;">Create Account<br> 2FA Guideline<br>
+              Forgot Password / Reset<br> 2FA ?
+              </p>
+
+              <div class="d-flex justify-content-center mb-4">
+                <div class="card" style="padding: 0.5rem 1.5rem; background-color:#fff; border:1px solid #cdcdcd; width:auto; display:inline-block;">
+                  <div class="card-body p-2" style="font-size:0.9rem; color:#555;">
+                    <div class="mb-2">
+                      <!-- warning triangle icon with slight border-radius -->
+                      <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" aria-hidden="true" focusable="false" style="display:inline-block; border-radius:6px; overflow:hidden;">
+                        <!-- rounded background -->
+                        <rect x="0" y="0" width="24" height="24" rx="6" ry="6" fill="#ffffff"></rect>
+                        <!-- triangle -->
+                        <path d="M1 21h22L12 2 1 21z" fill="#0b78b6"></path>
+                        <!-- exclamation -->
+                        <rect x="11" y="8" width="2" height="6" fill="#ffffff"></rect>
+                        <rect x="11" y="16" width="2" height="2" fill="#ffffff"></rect>
+                      </svg>
+                    </div>
+                    remember &nbsp;&nbsp;&nbsp;&nbsp;to<br>change &nbsp;&nbsp;&nbsp;&nbsp;your<br>password &nbsp;&nbsp;&nbsp;&nbsp;<br>atleast &nbsp;&nbsp;&nbsp;&nbsp;every<br>month, by using<br>the &nbsp;&nbsp;&nbsp;&nbsp;<span style="font-weight: bold;">change</span><br><span style="font-weight: bold;">Password</span><br>functionality
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="my-btn btn" style="color:white; background-color: #0c6696; font-size: 1.15rem; font-weight: 600; border-radius: 0; padding: 8px 16px;">LOGIN</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      
+
+      <!-- Section Footer -->
+      <div class="container" style="margin-top: 6rem;">
+        <footer id="footer">
+            <div class="footer-bottom visible-lg visible-md visible-sm">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 text-center" id="footerCredits" style="float: none; margin:0 auto;">
+                            <div class="copyright text-uppercase text-center">
+                                <p class="urdufooter" style="width: 100%; margin-bottom:0;">COPYRIGHT © 2015 -
+                                
+                                    2025
+                                    
+                                    MINISTRY OF <br> INTERIOR, GOVERNMENT OF PAKISTAN - V: <br> 5.5.6</p>
+        
+                            </div>
+                            <!-- /.menu-footer -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+
+    <script>
+      // Toggle password visibility (keeps markup minimal)
+      (function(){
+        var pw = document.getElementById('password');
+        var btn = document.getElementById('togglePassword');
+        var eye = document.getElementById('eyeIcon');
+
+        if (!pw || !btn || !eye) return;
+
+        btn.addEventListener('click', function(){
+          var isPwd = pw.type === 'password';
+          pw.type = isPwd ? 'text' : 'password';
+          btn.setAttribute('aria-label', isPwd ? 'Hide password' : 'Show password');
+          // swap icon: eye / eye-off (simple path swap)
+          if (isPwd) {
+            eye.innerHTML = '<path d="M2 2l20 20"></path><path d="M17.94 17.94A10.94 10.94 0 0 1 12 20c-7 0-11-8-11-8a21.3 21.3 0 0 1 5-5"></path><path d="M9.53 9.53a3 3 0 0 0 4.94 4.94"></path>';
+          } else {
+            eye.innerHTML = '<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"></path><circle cx="12" cy="12" r="3"></circle>';
+          }
+        });
+      })();
+    </script>
+</body>
+</html>
